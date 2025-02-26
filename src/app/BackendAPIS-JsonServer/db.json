@@ -1,0 +1,96 @@
+{
+  "Categories": [
+    {
+      "id": "1",
+      "name": "Laptops"
+    },
+    {
+      "id": "2",
+      "name": "Tablets"
+    },
+    {
+      "id": "3",
+      "name": "Mobiles"
+    }
+  ],
+  "Products": [
+    {
+      "id": "1",
+      "name": "Lenovo ThinkPad Laptop",
+      "price": 100,
+      "quantity": 1,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 1
+    },
+    {
+      "id": "2",
+      "name": "Apple MacBook Laptop",
+      "price": 200,
+      "quantity": 0,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 1
+    },
+    {
+      "id": "3",
+      "name": "Lenovo Tab 2",
+      "price": 300,
+      "quantity": 10,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 2
+    },
+    {
+      "id": "4",
+      "name": "Samsung Tab",
+      "price": 400,
+      "quantity": 2,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 2
+    },
+    {
+      "id": "5",
+      "name": "Samsung Note 10",
+      "price": 500,
+      "quantity": 0,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 3
+    },
+    {
+      "id": "6",
+      "name": "Samsung S22 Ultra",
+      "price": 600,
+      "quantity": 1,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 3
+    },
+    {
+      "id": "100",
+      "name": "New Tablet",
+      "price": 100,
+      "quantity": 5,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 2
+    },
+    {
+      "id": "100",
+      "name": "New Tablet",
+      "price": 100,
+      "quantity": 5,
+      "imgURL": "https://fakeimg.pl/250x100",
+      "categoryID": 2
+    },
+    {
+      "id": "4cde",
+      "name": "New Laptop",
+      "price": 100,
+      "quantity": 25,
+      "categoryID": "1"
+    },
+    {
+      "id": "934d",
+      "categoryID": "3",
+      "name": "tablet",
+      "price": 2000,
+      "quantity": 20
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+<div  class="text-danger">
+  <h3>To be Removed [for test] : </h3>
+  <div>
+    {{ newProduct | json }}
+  </div>
+</div>
+<hr>
+<div> 
+  <h2>Add New Product</h2>
+  <!-- Add reference for the form #productForm to use for validation -->
+  <form #productForm="ngForm" (ngSubmit)="addProduct()"  >
+    <!-- Product Name -->
+    <div  >
+      <label for="productName" class="form-label">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="productName"
+        [(ngModel)]="newProduct.name"
+        name="name"
+        required
+        #name="ngModel"
+      />
+      <!-- Display error if the field is invalid -->
+      <div *ngIf="name.invalid && name.touched" class="text-danger">
+        Product Name is required.
+      </div>
+    </div>
+
+    <!-- Product Price -->
+    <div >
+      <label for="productPrice" class="form-label">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="productPrice"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        required
+        #price="ngModel"
+      />
+      <div *ngIf="price.invalid && price.touched" class="text-danger">
+        Price is required.
+      </div>
+    </div>
+
+    <!-- Product Quantity -->
+    <div  >
+      <label for="productQuantity" class="form-label">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="productQuantity"
+        [(ngModel)]="newProduct.quantity"
+        name="quantity"
+        required
+        #quantity="ngModel"
+      />
+      <div *ngIf="quantity.invalid && quantity.touched" class="text-danger">
+        Quantity is required.
+      </div>
+    </div>
+
+    <!-- Product Image URL -->
+    <div  >
+      <label for="productImage" class="form-label">Image URL</label>
+      <input
+        type="file"
+        class="form-control"
+        id="productImage"
+        [(ngModel)]="newProduct.imgURL"
+        name="imgURL"
+        accept="image/*"
+      />
+    </div>
+
+    <!-- Category ID -->
+    <div  >
+      <label for="categoryID" class="form-label">Category</label>
+      <select
+        class="form-control"
+        id="categoryID"
+        [(ngModel)]="newProduct.categoryID"
+        name="categoryID"
+        required
+        #categoryID="ngModel"
+      >
+        <option *ngFor="let cat of CategoryList" [value]="cat.id">
+          {{ cat.name }}
+        </option>
+      </select>
+      <div *ngIf="categoryID.invalid && categoryID.touched" class="text-danger">
+        Category is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+     <hr>
+    <div  >
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="productForm.invalid"
+      >
+        Add Product
+      </button>
+    </div>
+  </form>
+</div>

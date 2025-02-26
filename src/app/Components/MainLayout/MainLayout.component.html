@@ -1,0 +1,12 @@
+<div class="container-fluid ps-0">
+  <section class="row">
+    <!-- Sidebar takes up 2 columns -->
+    <app-sidebar class="col-2"></app-sidebar>
+
+    <!-- Main content area takes up 10 columns, using router-outlet for dynamic component loading -->
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

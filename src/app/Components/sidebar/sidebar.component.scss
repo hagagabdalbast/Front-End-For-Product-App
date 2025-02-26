@@ -1,0 +1,74 @@
+/* Import Bootstrap (ensure this is done correctly) */
+/* @import 'path/to/bootstrap.min.scss'; */
+
+/* .bg-yellow {
+    background-color: yellow !important;
+  } */
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    background-color: #f8f9fa; // Light color for sidebar background
+  
+    .sidebar-heading {
+      padding: 0.875rem 1.25rem;
+      font-size: 1.2rem;
+      background-color: #e9ecef; // Light color for heading background
+      color: #343a40; // Dark text color for contrast
+    }
+  
+    .list-group {
+      width: 100%; // Adjust width to fit the sidebar
+      max-width: 30rem; // Max width for the sidebar
+      background-color: #f8f9fa; // Light color for list group background
+  
+      .list-group-item {
+        background-color: #f8f9fa; // Light color for list items
+        color: #343a40; // Dark color for list item text
+        padding: 1rem; // Padding for better spacing
+        font-size: 0.875rem; // Slightly smaller font size for a cleaner look
+        border: 2px solid transparent; // Add 2px border width
+  
+        &:hover {
+          background-color: #e2e6ea; // Slightly darker color on hover
+          border-color: #343a40; // Border color on hover
+        }
+      }
+    }
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  
+  body.sb-sidenav-toggled {
+    #wrapper {
+      #sidebar-wrapper {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    body.sb-sidenav-toggled {
+      #wrapper {
+        #sidebar-wrapper {
+          margin-left: -15rem;
+        }
+      }
+    }
+  }
+  

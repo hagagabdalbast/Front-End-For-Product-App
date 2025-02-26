@@ -1,0 +1,17 @@
+<!-- -- src/app/Components/ProductCard/product-card.component.html -->
+<div class="card m-2" style="width: 30%;">
+  <img [src]="Prd?.imgURL" class="card-img-top" alt="{{ Prd?.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ Prd?.name  }}</h5>
+    <p class="card-text">
+      <strong>Price (USD):</strong> {{ Prd?.price  }}<br>
+      <strong>Price (EGP):</strong> {{ Prd?.price  }}<br>
+      <strong>Available Quantity:</strong> {{ Prd?.quantity }}
+    </p>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button [disabled]="currPrid==ProductIDsList[0]" type="button" class="btn btn-danger" (click)="PrevProduct()">Previous</button>
+      <button type="button" class="btn btn-warning"(click)="goBack()"> Go Back </button>
+      <button [disabled]="currPrid==ProductIDsList[ProductIDsList.length-1]" type="button" class="btn btn-success"(click)="NextProduct()">Next</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+<!-- <div class="mb-3">
+  <label for="prdCat" class="form-label">Category:</label>
+  <select
+    class="form-select form-select-lg"
+    name="prdCat"
+    id="prdCat"
+    [(ngModel)]="selectedCategoryId" (change)="filterProductsbyCatId()"
+-->
+<!-- Optionally include a default option  -->
+<!-- <option [ngValue]="null">Select one</option> -->
+<!--   <option *ngFor="let cat of CategoryList" [value]="cat.id">
+      {{ cat.name }}
+    </option>
+  </select>
+</div> -->
+
+<!-- <div class="text-secondary">
+  [To be removed] For Test: {{ selectedCategoryId }}
+
+  <button type="button" class="btn btn-primary" (click)="change()">
+    Change Selected Category ID
+  </button>
+</div> -->
+<!-- <br>
+Today's Date is : {{OrderDate | date :'longDate'}}
+-->
+
+<hr />
+<button type="button" class="btn btn-success mb-3" [routerLink]="['/Product/AddProduct']">New Product</button>
+
+
+<table class="table table-secondary">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Av. Quantity</th>
+      <th scope="col">Price in USD</th>
+      <th scope="col">Price in EGP</th>
+      <th scope="col">Count</th>
+      <th scope="col">Details</th>
+      <th scope="col">Add To Cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- trackBy used with ngfor to enhance iterable objects identity -->
+    <!-- <tr *ngFor="let prd of prdList;let i=index;TrackBy:prdTrackByFunction"
+                [class.d-none]="selectedCategoryId != prd.categoryID"
+                [style.background-color]="(prd.quantity == 0)? 'yellow': 'lightgray'"> -->
+    <!-- <tr *ngFor="let prd of prdList;let i=index" [hidden]="prd.quantity==0"> -->
+
+    <!-- we use the ng-container when we use two dirctive in the same element in html-->
+    <!-- <ng-container *ngFor="let prd of prdList; let i = index">
+       [ngStyle]="{
+          'background-colorprd':
+            prd.quantity == 0 ? 'lightyellow' : 'lightgray',
+          color: prd.quantity == 0 ? 'darkred' : 'darkblue'
+        }"
+      </ng-container> -->
+
+    <tr *ngFor="let prd of PrdListofCat; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ prd?.name }}</td>
+      <td>
+        <img Lightbox="red" defaultColor="yellow" [src]="prd?.imgURL" alt="" />
+      </td>
+      <td>
+        <!-- <div *ngIf="prd.quantity!=0; else outofStock ">{{ prd?.quantity }}</div>
+            <ng-template #outofStock>Out Of Stock</ng-template> -->
+        <ng-container [ngSwitch]="prd.quantity">
+          <div *ngSwitchCase="0">Out Of Stock</div>
+          <div *ngSwitchCase="1">Last 1 items</div>
+          <div *ngSwitchCase="2">Last 2 items</div>
+          <div *ngSwitchDefault>{{ prd.quantity }}</div>
+        </ng-container>
+      </td>
+      <td>{{ prd.price | currency : "USD" : "symbol" }}</td>
+      <td>{{ prd.price | USDtoEGP : 49 | currency : "EGP" : "code" }}</td>
+      <td>
+        <input #itemsCount type="number" class="form-control" />
+      </td>
+      <!--  <td>
+        <button  type="button" class="btn btn-secondary" (click)="openPrdDetails(prd.id)"> Details</button>
+      </td> -->
+      <td>
+        <a
+          class="btn btn-success"
+          [routerLink]="['/Products', prd.id]"
+          routerLinkActive="router-link-active"
+          role="button"
+          >Details</a
+        >
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="buy(prd.price, itemsCount.value)"
+        >
+          Add to Cart
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+
+<!-- <h3 class="text-danger">
+  [To be Removed] For Test :<br>
+  Order Total Price: {{ orderTotalPrice }}
+</h3>
+ -->
