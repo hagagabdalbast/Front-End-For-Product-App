@@ -1,27 +1,49 @@
-# ProductApp
+# Product App — Angular Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+> An **Angular** single-page application with **server-side rendering (SSR)** for a product-management system. Connects to the companion ASP.NET Core Web API.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![SSR](https://img.shields.io/badge/SSR-Angular%20Universal-DD0031?style=flat)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✨ Features
 
-## Code scaffolding
+- 📦 Product catalog & management UI
+- ⚡ **Server-side rendering** via `server.ts` for faster first paint and SEO
+- 🧩 Modern Angular project structure (TypeScript end-to-end)
+- 🔌 Consumes the companion **Product App Web API**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tech Stack
 
-## Build
+- **Framework:** Angular
+- **Language:** TypeScript
+- **Rendering:** Angular SSR (`server.ts`)
+- **Tooling:** Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Getting Started
 
-## Running unit tests
+```bash
+# Install dependencies
+npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Start the dev server
+ng serve
+```
 
-## Running end-to-end tests
+Open [http://localhost:4200](http://localhost:4200).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+# Production build
+npm run build
 
-## Further help
+# Run the SSR server
+npm run serve:ssr
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔗 Related
+
+The backend for this app is the **Product App Web API** (ASP.NET Core), maintained in a separate repository.
+
+---
+
+<p align="center">Built by <a href="https://github.com/hagagabdalbast">Hagag Abdelbaset</a></p>
